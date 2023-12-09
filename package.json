@@ -1,0 +1,34 @@
+{
+  "name": "webhooks-simpleing",
+  "version": "1.0.0",
+  "description": "Simple webhooks for Slack and JANDI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeo11200/webhooks-simpleing.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [
+    "webhook",
+    "slack",
+    "jandi"
+  ],
+  "author": "Shin jinseop",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-fetch": "^2.6.9",
+    "node-fetch": "^3.3.2"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/yeo11200/webhooks-simpleing/issues"
+  },
+  "homepage": "https://github.com/yeo11200/webhooks-simpleing#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
