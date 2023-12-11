@@ -23,7 +23,7 @@ export interface WebhooksSendMessage {
   callback?: (res: Response) => {};
 }
 
-const webhooksSendMessage = async ({
+export const webhooksSendMessage = async ({
   type,
   urlType,
   title,
@@ -79,8 +79,4 @@ const webhooksSendMessage = async ({
         callback && callback(error);
       });
   }
-};
-
-export default {
-  webhooksSendMessage,
 };
