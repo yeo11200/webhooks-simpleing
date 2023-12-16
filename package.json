@@ -1,6 +1,6 @@
 {
   "name": "webhooks-simpleing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple webhooks for Slack and JANDI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/node-fetch": "^2.6.9",
+    "axios": "^1.6.2",
     "node-fetch": "^3.3.2"
   },
   "type": "module",
@@ -29,6 +30,7 @@
   },
   "homepage": "https://github.com/yeo11200/webhooks-simpleing#readme",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "typescript": "^5.3.3"
   }
 }
