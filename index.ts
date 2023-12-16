@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import axios from "axios";
 
 export type Response = {
   status?: number;
@@ -20,7 +20,7 @@ export interface WebhooksSendMessage {
   content: string;
 
   // 응답에 대한 callback으로 필요한지 여부
-  callback?: (res: Response) => {};
+  callback?: (res: any) => {};
 }
 
 export const webhooksSendMessage = async ({
@@ -67,16 +67,18 @@ export const webhooksSendMessage = async ({
   }
 
   for (let i = 0; i < urlLength; i++) {
-    await fetch(url[i], {
+    await axios(url[i], {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers,
-      body: payload,
+      data: payload,
     })
       .then((res) => {
         callback && callback(res);
+        return res;
       })
       .catch((error) => {
         callback && callback(error);
+        return error;
       });
   }
 };
