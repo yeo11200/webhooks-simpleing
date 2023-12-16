@@ -19,8 +19,8 @@ export interface WebhooksSendMessage {
   // 응답에 대한 내용
   content: string;
 
-  // 응답에 대한 callbakc으로 필요한지 여부
-  callback?: (res: Response) => {};
+  // 응답에 대한 callback으로 필요한지 여부
+  callback?: (res: any) => {};
 }
 
 export const webhooksSendMessage = async ({
@@ -73,10 +73,12 @@ export const webhooksSendMessage = async ({
       body: payload,
     })
       .then((res) => {
-        callback && callback(res);
+        callback && callback(res.json());
+        return res.json();
       })
       .catch((error) => {
         callback && callback(error);
+        return error;
       });
   }
 };
