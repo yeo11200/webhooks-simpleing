@@ -1,4 +1,4 @@
-import axios from "axios";
+import fetch from "node-fetch";
 
 export type Response = {
   status?: number;
@@ -67,10 +67,10 @@ export const webhooksSendMessage = async ({
   }
 
   for (let i = 0; i < urlLength; i++) {
-    await axios(url[i], {
+    await fetch(url[i], {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers,
-      data: payload,
+      body: payload,
     })
       .then((res) => {
         callback && callback(res);
